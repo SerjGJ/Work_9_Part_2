@@ -1,25 +1,19 @@
-import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { createElement } from 'react';
 
-const App = () => {
+export const App = () => {
 	const currentYear = new Date().getFullYear();
 
-	const appElement = React.createElement(
+	return createElement(
 		'div',
 		{ className: 'App' },
-		React.createElement(
+		createElement(
 			'header',
 			{ className: 'App-header' },
-			React.createElement('img', { src: logo, className: 'App-logo', alt: 'logo' }),
-			React.createElement(
-				'p',
-				null,
-				'Edit ',
-				React.createElement('code', null, 'src/App.js'),
-				' and save to reload.',
-			),
-			React.createElement(
+			createElement('img', { src: logo, className: 'App-logo', alt: 'logo' }),
+			createElement('p', null, 'Edit ', createElement('code', null, 'src/App.js'), ' and save to reload.'),
+			createElement(
 				'a',
 				{
 					className: 'App-link',
@@ -29,11 +23,7 @@ const App = () => {
 				},
 				'Learn React',
 			),
-			React.createElement('p', null, currentYear),
+			createElement('p', null, currentYear),
 		),
 	);
-
-	return appElement;
 };
-
-export default App;
