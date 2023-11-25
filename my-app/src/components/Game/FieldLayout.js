@@ -1,0 +1,12 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+
+const FieldLayout = ({ children }) => {
+	return <div className="field-layout">{children}</div>;
+};
+
+FieldLayout.propTypes = {
+	children: PropTypes.node,
+};
+
+export default FieldLayout;
