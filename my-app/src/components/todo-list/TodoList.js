@@ -1,8 +1,11 @@
 import React from 'react';
-import styles from '../App.module.css';
-import { TodoItem } from './TodoItem';
+import styles from '../../App.module.css';
+import { TodoItem } from '../todo-item/TodoItem';
+import { useAppContext } from '../AppTodoContext';
 
-export const TodoList = ({ sortedTodos, editableTodoId, editedTodoText, deleteTodo, startEdit, saveEdit, setEditedTodoText }) => {
+export const TodoList = () => {
+	const { sortedTodos, editableTodoId, editedTodoText, deleteTodo, startEdit, saveEdit, setEditedTodoText } = useAppContext();
+
 	return Array.isArray(sortedTodos) ? (
 		<ul className={styles.todoList}>
 			{sortedTodos.map((todo) => (

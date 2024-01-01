@@ -1,7 +1,10 @@
 import React from 'react';
-import styles from '../App.module.css';
+import styles from '../../App.module.css';
+import { useAppContext } from '../AppTodoContext';
 
-export const TodoInput = ({ newTodo, setNewTodo, addTodo, setSearchTerm, handleSearch, setSortByAlphabet }) => {
+export const TodoInput = () => {
+	const { newTodo, setNewTodo, setSearchTerm, handleSearch, setSortByAlphabet, addTodo } = useAppContext();
+
 	return (
 		<div className={styles.inputContainer}>
 			<input type="text" value={newTodo} onChange={(event) => setNewTodo(event.target.value)} placeholder="Новая задача" className={styles.inputField} />

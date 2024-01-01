@@ -1,7 +1,10 @@
 import React from 'react';
-import styles from '../App.module.css';
+import styles from '../../App.module.css';
+import { useAppContext } from '../AppTodoContext';
 
-export const TodoItem = ({ todo, editableTodoId, editedTodoText, deleteTodo, startEdit, saveEdit, setEditedTodoText }) => {
+export const TodoItem = ({ todo }) => {
+	const { editableTodoId, editedTodoText, deleteTodo, startEdit, saveEdit, setEditedTodoText } = useAppContext();
+
 	return (
 		<li key={todo.id}>
 			{editableTodoId === todo.id ? (
